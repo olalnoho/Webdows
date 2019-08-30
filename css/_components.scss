@@ -1,0 +1,236 @@
+.content {
+  position: relative;
+  flex: 1;
+  background-image: url("../images/wallpaper.jpg");
+  background-size: cover;
+
+  &__menu {
+    transition: all 0.3s;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 70%;
+    width: 35rem;
+    background-color: rgba(#000, 0.8);
+
+    &--list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 2rem;
+      color: white;
+      height: 100%;
+      width: 90%;
+      margin: auto;
+      margin-top: 2rem;
+    }
+    &--items {
+      transition: all 0.3s;
+      padding: 2rem;
+      width: 100%;
+
+      &::before {
+        content: "○     ";
+        display: inline;
+      }
+    }
+
+    &--items:hover {
+      background-color: $windows-blue;
+      transform: translateY(-0.2rem);
+    }
+  }
+}
+
+.taskbar {
+  height: 100%;
+  padding: 2rem 0rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4vh;
+  background-color: $windows-blue;
+
+  &__minimized {
+    height: 3vh;
+    flex: 1;
+    color: white;
+    display: flex;
+    margin-left: 10rem;
+    align-items: center;
+  }
+
+  &__minimized > * {
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    height: 100%;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid transparent;
+    &:hover {
+      opacity: 0.5;
+      border-bottom: 1px solid white;
+    }
+  }
+
+  &__calendar {
+    text-align: center;
+    font-size: 1.3rem;
+    color: white;
+    margin-right: 1rem;
+    padding: 1rem 1rem;
+  }
+
+  &__btn {
+    display: flex;
+    font-size: 1.4rem;
+    color: white;
+    align-items: center;
+  }
+
+  img {
+    margin: 0 1rem;
+    width: 3rem;
+  }
+}
+
+// PAINT
+// Box shadow?
+.paint {
+  visibility: hidden;
+  width: 50%;
+  height: 70%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+  flex-direction: column;
+  z-index: 20;
+
+  &__actions {
+    display: flex;
+  }
+
+  &__toolbar {
+    background-color: blueviolet;
+    color: aliceblue;
+    letter-spacing: 2px;
+    font-size: 2rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+    &--top {
+      align-items: center;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &--bottom {
+      align-items: center;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__brush {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &--actions {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      & > * {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__close {
+    color: black;
+    font-size: 2rem;
+    padding: 0.2rem;
+    cursor: pointer;
+  }
+
+  &__colors {
+    display: flex;
+  }
+
+  &__color {
+    cursor: pointer;
+    margin: 0 1rem 0 0;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+
+    &[green] {
+      background-color: green;
+    }
+    &[blue] {
+      background-color: blue;
+    }
+    &[red] {
+      background-color: red;
+    }
+    &[black] {
+      background-color: black;
+    }
+    &[white] {
+      background-color: white;
+    }
+  }
+
+  canvas {
+    background-color: #fff;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .paint {
+    width: 80%;
+    height: 80%;
+
+    &__colors {
+      margin: 0;
+    }
+    p {
+      margin: auto;
+    }
+    &__toolbar {
+      flex-direction: column;
+    }
+  }
+
+  .taskbar {
+    height: 6vh;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .paint {
+    width: 90%;
+    height: 80%;
+
+    &__color {
+      width: 3.5rem;
+      height: 3.5rem;
+    }
+  }
+
+  .taskbar {
+    &__minimized {
+      margin-left: 3rem;
+    }
+  }
+}

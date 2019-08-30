@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Webdows</title>
+</head>
+
+<body>
+    <div id="drawwindow" class="paint">
+        <div id="toolbar" class="paint__toolbar">
+            <div class="paint__toolbar--top">
+                <h3>Choose a color</h3>
+                <div class="paint__actions">
+                    <p id="minimizewindow" class="paint__close">&mdash;</p>
+                    <p id="close" class="paint__close">X</p>
+                </div>
+            </div>
+            <div class="paint__toolbar--bottom">
+                <div class="paint__colors">
+                    <div class="paint__color" red></div>
+                    <div class="paint__color" blue></div>
+                    <div class="paint__color" black></div>
+                    <div class="paint__color" green></div>
+                    <div class="paint__color" white></div>
+                </div>
+                <div class="paint__brush">
+                    <label>Brush size</label>
+                    <div class="paint__brush--actions">
+                        <p id="dec_brush">&leftarrow;</p>
+                        <p id="inc_brush">&rightarrow;</p>
+                    </div>
+                    <div id="brushValue">10</div>
+                </div>
+            </div>
+        </div>
+        <canvas id="canvas"></canvas>
+    </div>
+    <div class="container">
+        <div id="content" class="content">
+            <div id="menu" class="content__menu">
+                <ul class="content__menu--list">
+                    <li class="content__menu--items" id="about">About</li>
+                    <li class="content__menu--items" id="paint">Paint</li>
+                    <li class="content__menu--items">Hello</li>
+                    <li class="content__menu--items">Hello</li>
+                </ul>
+            </div>
+        </div>
+        <div id="taskbar" class="taskbar">
+            <div class="taskbar__btn">
+                <img id="menubtn" src="/images/menu.png" alt="">
+                <span>Start</span>
+            </div>
+            <div id="minimized" class="taskbar__minimized">
+
+            </div>
+            <div class="taskbar__calendar">
+                <div id="clock" class="taskbar__clock"></div>
+                <div id="date" class="taskbar__date"></div>
+            </div>
+        </div>
+    </div>
+    <script src="/js/index.js"></script>
+</body>
+
+</html>

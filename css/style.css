@@ -1,0 +1,350 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=PT+Sans:400,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: PT Sans, Arial, Helvetica, sans-serif;
+}
+
+@media only screen and (max-width: 650px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+}
+
+ul {
+  list-style: none;
+}
+
+a:link, a:active {
+  text-decoration: none;
+}
+
+.content {
+  position: relative;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-image: url("../images/wallpaper.jpg");
+  background-size: cover;
+}
+
+.content__menu {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 70%;
+  width: 35rem;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.content__menu--list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 2rem;
+  color: white;
+  height: 100%;
+  width: 90%;
+  margin: auto;
+  margin-top: 2rem;
+}
+
+.content__menu--items {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  padding: 2rem;
+  width: 100%;
+}
+
+.content__menu--items::before {
+  content: "○     ";
+  display: inline;
+}
+
+.content__menu--items:hover {
+  background-color: #2a5ddc;
+  -webkit-transform: translateY(-0.2rem);
+          transform: translateY(-0.2rem);
+}
+
+.taskbar {
+  height: 100%;
+  padding: 2rem 0rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 4vh;
+  background-color: #2a5ddc;
+}
+
+.taskbar__minimized {
+  height: 3vh;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 10rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.taskbar__minimized > * {
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  height: 100%;
+  padding: 0 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid transparent;
+}
+
+.taskbar__minimized > *:hover {
+  opacity: 0.5;
+  border-bottom: 1px solid white;
+}
+
+.taskbar__calendar {
+  text-align: center;
+  font-size: 1.3rem;
+  color: white;
+  margin-right: 1rem;
+  padding: 1rem 1rem;
+}
+
+.taskbar__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.4rem;
+  color: white;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.taskbar img {
+  margin: 0 1rem;
+  width: 3rem;
+}
+
+.paint {
+  visibility: hidden;
+  width: 50%;
+  height: 70%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  z-index: 20;
+}
+
+.paint__actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.paint__toolbar {
+  background-color: blueviolet;
+  color: aliceblue;
+  letter-spacing: 2px;
+  font-size: 2rem;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.paint__toolbar--top {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.paint__toolbar--bottom {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.paint__brush {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.paint__brush--actions {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.paint__brush--actions > * {
+  cursor: pointer;
+}
+
+.paint__close {
+  color: black;
+  font-size: 2rem;
+  padding: 0.2rem;
+  cursor: pointer;
+}
+
+.paint__colors {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.paint__color {
+  cursor: pointer;
+  margin: 0 1rem 0 0;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+}
+
+.paint__color[green] {
+  background-color: green;
+}
+
+.paint__color[blue] {
+  background-color: blue;
+}
+
+.paint__color[red] {
+  background-color: red;
+}
+
+.paint__color[black] {
+  background-color: black;
+}
+
+.paint__color[white] {
+  background-color: white;
+}
+
+.paint canvas {
+  background-color: #fff;
+}
+
+@media only screen and (max-width: 1200px) {
+  .paint {
+    width: 80%;
+    height: 80%;
+  }
+  .paint__colors {
+    margin: 0;
+  }
+  .paint p {
+    margin: auto;
+  }
+  .paint__toolbar {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .taskbar {
+    height: 6vh;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .paint {
+    width: 90%;
+    height: 80%;
+  }
+  .paint__color {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+  .taskbar__minimized {
+    margin-left: 3rem;
+  }
+}
