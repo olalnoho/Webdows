@@ -214,14 +214,8 @@ closebtn.addEventListener('click', e => {
    ctx.clearRect(0, 0, canvas.width, canvas.height);
 })
 
-function resetTaskbar() {
-   for (let i = 0; i < taskbar.children.length; i++) {
-      taskbar.children[i].remove()
-   }
-}
-
 function refreshMini() {
-   resetTaskbar()
+   taskbar.innerHTML = ''
    Object.keys(minimized).forEach(item => {
       const elem = document.createElement('h3')
       elem.innerHTML = item
